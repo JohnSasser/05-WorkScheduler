@@ -43,6 +43,8 @@ $buttons.on("click", function() {
 			.attr("id");
 		// console.log(textareaId, noteArr[i].inputId);
 		if (textareaId == noteArr[i].inputId) {
+			// i is the index and 1 is how-many objects will get spliced,
+			// since we only want to remove the one note, it is 1.
 			noteArr.splice(i, 1);
 		}
 	}
