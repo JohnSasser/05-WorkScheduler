@@ -1,9 +1,30 @@
 // change the color of the <li> based on the time of day
 
-let currentTime = moment().format("MMM Do YYYY");
+let currentTime = moment().format("kk");
+let $currentDate = moment().format("MMMM Do YYYY");
 let noteArr = [];
 let $textArea = $(".textInput");
 let $buttons = $(".btn");
+let $listItem = $(".listRow");
+let $dataTimes = $listItem.attr("data-time");
+
+// TRYING TO USE .ATTR(DATA-TIME) TO COMPARE WITH 24HR TIME FROM MOMENT() TO SET THE BACKGROUND COLOR OF THE TIME-BLOCK-DIV'S;
+
+// 1) tried to parse $dataTimes & currentTime since the strings were not working; FAIL;
+// 2) tried to work in an array and the values are not comparing to another; FAIL;
+// 3)
+function timeColor() {
+	let numDataTime = parseInt($dataTimes);
+	let numCurrentTime = parseInt(currentTime);
+	if (numCurrentTime > numDataTime);
+	{
+		$listItem.addClass(".past");
+		console.log(numCurrentTime > numDataTime);
+		console.log(numCurrentTime);
+		console.log(numDataTime);
+	}
+	// console.log(moment("12:43 PM", "hh:mm a/A"));
+}
 
 function sendNotes() {
 	let inputArr = JSON.stringify(noteArr);
@@ -65,6 +86,6 @@ $buttons.on("click", function() {
 // - always put the 'start game' function calls at the bottom of the script,
 // - The bottom of the script will be the first thing called (or most,
 // readily available) instead-of at the top of the script.
-
+timeColor();
 returnNotes();
-$("#currentTime").text(currentTime);
+$("#currentDate").text($currentDate);
