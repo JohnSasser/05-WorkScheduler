@@ -6,26 +6,34 @@ let noteArr = [];
 let $textArea = $(".textInput");
 let $buttons = $(".btn");
 let $listItem = $(".listRow");
-let $dataTimes = $listItem.attr("data-time");
+// let $dataTimes = $listItem.attr("data-time");
 
 // TRYING TO USE .ATTR(DATA-TIME) TO COMPARE WITH 24HR TIME FROM MOMENT() TO SET THE BACKGROUND COLOR OF THE TIME-BLOCK-DIV'S;
 
-// 1) tried to parse $dataTimes & currentTime since the strings were not working; FAIL;
-// 2) tried to work in an array and the values are not comparing to another; FAIL;
-// 3)
-function timeColor() {
-	let numDataTime = parseInt($dataTimes);
-	let numCurrentTime = parseInt(currentTime);
-	if (numCurrentTime > numDataTime);
-	{
-		$listItem.addClass(".past");
-		console.log(numCurrentTime > numDataTime);
-		console.log(numCurrentTime);
-		console.log(numDataTime);
-	}
-	// console.log(moment("12:43 PM", "hh:mm a/A"));
-}
+// 	*** NOT WORKING ***
 
+function timeColor() {
+	$listItem.each(function() {
+		let momentTime = parseInt(moment(currentTime, "kk"));
+		let $dataTimes = parseInt($listItem.attr("data-time"));
+		console.log("works in the each loop");
+		if (momentTime > $dataTimes) {
+			console.log("works in the if statement");
+			debugger;
+			$listItem.addClass("past");
+			console.log(numCurrentTime > numDataTime);
+			console.log(numCurrentTime);
+			console.log(numDataTime);
+		}
+		if (momentTime == $dataTimes) {
+			$listItem.addClass("present");
+		}
+		if (momentTime < $dataTimes) {
+			$listItem.addClass("future");
+		}
+	});
+}
+// * WORKING CODE *
 function sendNotes() {
 	let inputArr = JSON.stringify(noteArr);
 	localStorage.setItem("userNote", inputArr);
@@ -49,6 +57,8 @@ function returnNotes() {
 			if (textareaId == gotNote[i].inputId) {
 				$(this).val(gotNote[i].userInput);
 				// $($textArea[idx]).val(gotNote[i].userInput);
+			} else {
+				return;
 			}
 		}
 	});

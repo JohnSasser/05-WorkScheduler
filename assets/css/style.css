@@ -37,6 +37,10 @@ textarea {
 	border-top: 1px solid white;
 }
 
+.listRow {
+	margin-top: 10px;
+}
+
 .hour {
 	background-color: #ffffff;
 	color: #000000;
@@ -50,13 +54,13 @@ textarea {
 
 .present {
 	background-color: #c69c9a;
-	color: white;
+	color: black;
 	opacity: 0.8;
 }
 
 .future {
 	background-color: #83b483;
-	color: white;
+	color: rgb(28, 28, 28);
 }
 
 .saveBtn {
