@@ -1,19 +1,21 @@
 // change the color of the <li> based on the time of day
 
 let currentTime = moment().format("kk");
-let $currentDate = moment().format("MMMM Do YYYY");
 let noteArr = [];
 let $textArea = $(".textInput");
 let $buttons = $(".btn");
-let $listItem = $(".listRow");
-// let $dataTimes = $listItem.attr("data-time");
+let $timeBlock = $(".listRow");
 
 // TRYING TO USE .ATTR(DATA-TIME) TO COMPARE WITH 24HR TIME FROM MOMENT() TO SET THE BACKGROUND COLOR OF THE TIME-BLOCK-DIV'S;
 
-// 	*** NOT WORKING ***
-// $listItem.each(function(idx) {
+setInterval(function() {
+	$("#date").text(moment().format("MMMM Do YYYY  -  h:mm:ss A"));
+}, 1000);
+
+// *** NOT WORKING ***
+// $timeBlock.each(function(idx) {
 // 	let momentTime = moment().format("kk");
-// 	let $dataTimes = $listItem[idx].attr("data-time");
+// 	let $dataTimes = $timeBlock[idx].attr("data-time");
 // 	console.log("works in the each loop");
 // 	console.log($dataTimes);
 // 	if (momentTime > $dataTimes) {
@@ -21,28 +23,33 @@ let $listItem = $(".listRow");
 // 		// debugger;
 // 		console.log(momentTime);
 // 		console.log($dataTimes);
-// 		$listItem.addClass("past");
+// 		$timeBlock.addClass("past");
 // 	} else if (momentTime == $dataTimes) {
 // 		console.log("works in the second if statement");
-// 		$listItem.addClass("present");
+// 		$timeBlock.addClass("present");
 // 	} else if (momentTime < $dataTimes) {
 // 		console.log("works in the third if statement");
-// 		$listItem.addClass("future");
+// 		$timeBlock.addClass("future");
 // 	}
 // });
 
 function timeColor() {
-	for (i = 0; i < $listItem.length; i++) {
-		var $dataTime = parseInt($listItem[i].getAttribute("data-time"));
+	for (i = 0; i < $timeBlock.length; i++) {
+		var $dataTime = parseInt($timeBlock[i].getAttribute("data-time"));
 		if (currentTime > $dataTime) {
-			$listItem[i].classList.add("past");
-			console.log("past", $dataTime);
-		} else if (currentTime === $dataTime) {
-			$listItem[i].classList.add("present");
-			console.log("present", $dataTime);
-		} else currentTime < dataTime;
-		$listItem[i].classList.add("future");
-		console.log("future", $dataTime);
+			$timeBlock[i].classList.add("past");
+			// console.log("past", $dataTime);
+			// debugger;
+		}
+		if (currentTime == $dataTime) {
+			$timeBlock[i].classList.add("present");
+			// console.log("present", $dataTime);
+		}
+		if (currentTime < $dataTime) {
+			$timeBlock[i].classList.add("future");
+			console.log("future", $dataTime);
+			console.log("futrue", currentTime);
+		}
 	}
 }
 
@@ -111,4 +118,3 @@ $buttons.on("click", function() {
 // readily available) instead-of at the top of the script.
 timeColor();
 returnNotes();
-$("#currentDate").text($currentDate);
