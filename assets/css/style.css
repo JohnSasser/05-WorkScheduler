@@ -37,10 +37,6 @@ textarea {
 	border-top: 1px solid white;
 }
 
-.listRow {
-	margin-top: 10px;
-}
-
 .hour {
 	background-color: #ffffff;
 	color: #000000;
@@ -63,13 +59,13 @@ textarea {
 	color: rgb(28, 28, 28);
 }
 
-.saveBtn {
+/* .saveBtn {
 	border-left: 1px solid black;
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
 	background-color: #06aed5;
 	color: white;
-}
+} */
 
 .saveBtn i:hover {
 	font-size: 20px;
@@ -78,6 +74,10 @@ textarea {
 
 /* css for the page */
 
+body {
+	background-color: rgb(209, 212, 222);
+}
+
 h1 {
 	text-shadow: 0 0 5px #a4d0ff;
 	color: #007bff;
@@ -85,10 +85,21 @@ h1 {
 
 .jumbotron {
 	border-bottom: 18px solid #1988ff;
+	background-image: url("https://media.giphy.com/media/Rm18AZrEVywfu/giphy.gif");
 }
+
+btn:hover {
+	size: 200%;
+}
+
 #currentTime {
 	font-size: 25px;
 }
+
+.listRow {
+	margin-top: 10px;
+}
+
 ul {
 	padding-bottom: 60px;
 }
