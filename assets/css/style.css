@@ -76,6 +76,7 @@ textarea {
 
 body {
 	background-color: rgb(209, 212, 222);
+	/* background-image: url("https://media.giphy.com/media/xTiN0A1yDc84UV9WZa/giphy.gif"); */
 }
 
 h1 {
@@ -87,6 +88,11 @@ h1 {
 	border-bottom: 18px solid #1988ff;
 	background-image: url("https://media.giphy.com/media/Rm18AZrEVywfu/giphy.gif");
 }
+
+/* .textInput:hover {
+	 background-image: url("https://media.giphy.com/media/jBAlc2a8pXVRe/giphy.gif");
+	color: whitesmoke; 
+} */
 
 btn:hover {
 	size: 200%;

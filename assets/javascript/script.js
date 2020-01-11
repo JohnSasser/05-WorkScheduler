@@ -17,7 +17,7 @@ setInterval(function() {
 // *** NOT WORKING ***
 // $timeBlock.each(function(idx) {
 // 	let momentTime = moment().format("kk");
-// 	let $dataTimes = $timeBlock[idx].attr("data-time");
+// 	let $dataTimes = parseInt($timeBlock[idx].attr("data-time"));
 // 	console.log("works in the each loop");
 // 	console.log($dataTimes);
 // 	if (momentTime > $dataTimes) {
@@ -33,6 +33,7 @@ setInterval(function() {
 // 		console.log("works in the third if statement");
 // 		$timeBlock.addClass("future");
 // 	}
+// 	return idx;
 // });
 
 function timeColor() {
@@ -49,18 +50,19 @@ function timeColor() {
 		}
 		if (currentTime < $dataTime) {
 			$timeBlock[i].classList.add("future");
-			console.log("future", $dataTime);
-			console.log("futrue", currentTime);
+			// console.log("future", $dataTime);
+			// console.log("futrue", currentTime);
 		}
 	}
 }
 
-// * WORKING CODE *
+// sends the inputArr out to localStorage;
 function sendNotes() {
 	let inputArr = JSON.stringify(noteArr);
 	localStorage.setItem("userNote", inputArr);
 }
 
+// pulls notes from the userNote key in localStorage;
 function returnNotes() {
 	let getInput = localStorage.getItem("userNote");
 	let gotNote = JSON.parse(getInput);
