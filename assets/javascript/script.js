@@ -11,28 +11,41 @@ let $listItem = $(".listRow");
 // TRYING TO USE .ATTR(DATA-TIME) TO COMPARE WITH 24HR TIME FROM MOMENT() TO SET THE BACKGROUND COLOR OF THE TIME-BLOCK-DIV'S;
 
 // 	*** NOT WORKING ***
+// $listItem.each(function(idx) {
+// 	let momentTime = moment().format("kk");
+// 	let $dataTimes = $listItem[idx].attr("data-time");
+// 	console.log("works in the each loop");
+// 	console.log($dataTimes);
+// 	if (momentTime > $dataTimes) {
+// 		console.log("works in the first if statement");
+// 		// debugger;
+// 		console.log(momentTime);
+// 		console.log($dataTimes);
+// 		$listItem.addClass("past");
+// 	} else if (momentTime == $dataTimes) {
+// 		console.log("works in the second if statement");
+// 		$listItem.addClass("present");
+// 	} else if (momentTime < $dataTimes) {
+// 		console.log("works in the third if statement");
+// 		$listItem.addClass("future");
+// 	}
+// });
 
 function timeColor() {
-	$listItem.each(function() {
-		let momentTime = parseInt(moment(currentTime, "kk"));
-		let $dataTimes = parseInt($listItem.attr("data-time"));
-		console.log("works in the each loop");
-		if (momentTime > $dataTimes) {
-			console.log("works in the if statement");
-			debugger;
-			$listItem.addClass("past");
-			console.log(numCurrentTime > numDataTime);
-			console.log(numCurrentTime);
-			console.log(numDataTime);
-		}
-		if (momentTime == $dataTimes) {
-			$listItem.addClass("present");
-		}
-		if (momentTime < $dataTimes) {
-			$listItem.addClass("future");
-		}
-	});
+	for (i = 0; i < $listItem.length; i++) {
+		var $dataTime = parseInt($listItem[i].getAttribute("data-time"));
+		if (currentTime > $dataTime) {
+			$listItem[i].classList.add("past");
+			console.log("past", $dataTime);
+		} else if (currentTime === $dataTime) {
+			$listItem[i].classList.add("present");
+			console.log("present", $dataTime);
+		} else currentTime < dataTime;
+		$listItem[i].classList.add("future");
+		console.log("future", $dataTime);
+	}
 }
+
 // * WORKING CODE *
 function sendNotes() {
 	let inputArr = JSON.stringify(noteArr);
