@@ -15,7 +15,7 @@ I built this with a very basic understanding of local storage, JSON and JavaScri
 
 # Usage
 
-If you are a developer and open the console immediatly upon loading the page, you will get a TypeError @ line # script.js:78. It is cause of an empty array without current notes saved to local storage. I am still in the beginning stages of my career and plan to save everything to an object in future projects. This was the solution that I currently understand how to solve and still was tight with my deliverable time constraint.
+If you are a developer and open the console immediately upon loading the page, you will get a TypeError @ line # script.js:78. It is cause of an empty array without current notes saved to local storage. I am still in the beginning stages of my career and plan to save everything to an object in future projects. This was the solution that I currently understand how to solve and still was tight with my deliverable time constraint.
 
 # Installation
 
