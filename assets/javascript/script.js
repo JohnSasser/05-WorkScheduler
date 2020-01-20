@@ -6,8 +6,6 @@ let $textArea = $(".textInput");
 let $buttons = $(".btn");
 let $timeBlock = $(".listRow");
 
-// TRYING TO USE .ATTR(DATA-TIME) TO COMPARE WITH 24HR TIME FROM MOMENT() TO SET THE BACKGROUND COLOR OF THE TIME-BLOCK-DIV'S;
-
 setInterval(function() {
 	$("#date")
 		.text(moment().format("MMMM Do YYYY  -  h:mm:ss A"))

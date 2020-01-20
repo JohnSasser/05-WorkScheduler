@@ -7,7 +7,7 @@ Just simply enter your note in the main text section and click the SAVE button f
 Enjoy and remember,
 Efficiency is the key to success!!!
 
-[Alt text](./assets/images/Day-Planner-min.png?raw=true)
+![Alt text](./assets/images/Day-Planner-min.png?raw=true)
 
 # About
 
